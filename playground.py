@@ -7,3 +7,4 @@ print("hello")
 # south
 
 # west
+print("Kanye West")
