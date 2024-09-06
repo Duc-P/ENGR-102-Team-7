@@ -49,6 +49,11 @@ print(f"Odd number: {((a and b and c) or (a and (not b) and (not c)) or (b and (
 
 # notice how the parenthesis light up when you click on one of its pair
 
+print(f"Complex 1: {(not (a and not b) or (not c and b)) and (not b) or (not a and b and not c) or (a and not b)}")
+print(f"Complex 2: {(not ((b or not c) and (not a or not c))) or (not (c or not (b and c))) or (a and not c) and (not a or (a and b and c) or (a and ((b and not c) or (not b))))}")
+print(f"Simple 1: {(not (a and not b) and (not b) or (not a and b and not c) or (a and not b))}")
+print(f"Simple 2: {(not ((b or not c) and (not a or not c))) or (a and not c) and (not a or (a and b and c) or (a and ((b and not c) or (not b))))}")
+
 # (not (a and not b) or (not c and b)) and (not b) or (not a and b and not c) or (a and not b)
 # (not ((b or not c) and (not a or not c))) or (not (c or not (b and c))) or (a and not c) and (not a or (a and b and c) or (a and ((b and not c) or (not b))))
 
