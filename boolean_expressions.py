@@ -34,13 +34,14 @@ print(f"a or b or c: {(a or b or c)}")
 
 ############ Part C ############
 
-# print "XOR: " then check (not a and b) or (not b and a)
-# print "Odd number: " then check the cases when...
+print(f"XOR: {((not a and b) or (not b and a))}")
+print(f"Odd number: {((a and b and c) or (a and (not b) and (not c)) or (b and (not a) and (not c)) or (c and (not a) and (not b)))}")
 
-# all three are true: a and b and c
-# only a is true: a and (not b) and (not c)
-# only b is true: see a above, swap out letters
-# only c is true: see a above, swap out letters
+# all three are true: (a and b and c)
+# only a is true: (a and (not b) and (not c))
+# only b is true: (b and (not a) and (not c))
+# only c is true: (c and (not a) and (not b))
+#Combined: ((a and b and c) or (a and (not b) and (not c)) or (b and (not a) and (not c)) or (c and (not a) and (not b)))
 
 # evaluate all 4 cases above using <and> on ONE LINE OF CODE (probably inside the print statement; if one case fail, it should return False)
 
