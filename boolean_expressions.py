@@ -29,8 +29,8 @@ c = (c == "True" or c == "T" or c == "t") and not(c == "False" or c == "F" or c 
 
 ############ Part B ############
 
-# print("a and b and c: ") then check (a and b and c)
-# print("a or b or c: ") then check (a or b or c)
+print(f"a and b and c: {(a and b and c)}")
+print(f"a or b or c: {(a or b or c)}")
 
 ############ Part C ############
 
