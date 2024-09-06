@@ -21,9 +21,9 @@
 # example:
 a = input("Enter True or False for a: ")
 a = (a == "True" or a == "T" or a == "t") and not(a == "False" or a == "F" or a == "f")
-b = input("Enter True or False for a: ")
+b = input("Enter True or False for b: ")
 b = (b == "True" or b == "T" or b == "t") and not(b == "False" or b == "F" or b == "f")
-c = input("Enter True or False for a: ")
+c = input("Enter True or False for c: ")
 c = (c == "True" or c == "T" or c == "t") and not(c == "False" or c == "F" or c == "f")
 
 
