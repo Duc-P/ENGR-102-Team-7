@@ -9,7 +9,7 @@
 # Archelaus Paxon
 # Section: 518
 # Assignment: Lab Topic 4 Activity 3
-# Date:
+# Date: 6-9-2024
 
    
 ############ Part A ############
@@ -21,12 +21,16 @@
 # example:
 a = input("Enter True or False for a: ")
 a = (a == "True" or a == "T" or a == "t") and not(a == "False" or a == "F" or a == "f")
-# print(a) # if you want to test it out
+b = input("Enter True or False for a: ")
+b = (b == "True" or b == "T" or b == "t") and not(b == "False" or b == "F" or b == "f")
+c = input("Enter True or False for a: ")
+c = (c == "True" or c == "T" or c == "t") and not(c == "False" or c == "F" or c == "f")
+
 
 ############ Part B ############
 
-# print "a and b and c: " then check (a and b and c)
-# print "a or b or c: " then check (a or b or c)
+# print("a and b and c: ") then check (a and b and c)
+# print("a or b or c: ") then check (a or b or c)
 
 ############ Part C ############
 
