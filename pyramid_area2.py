@@ -8,7 +8,7 @@
 # Julian Curry
 # Archelaus Paxon
 # Section: 518
-# Assignment: Lab Topic 6 Activity 1
+# Assignment: Lab Topic 6 Activity 1 Part 2
 # Date: 16-9-2024
 
 #Asks the user for the side length and number of layers
