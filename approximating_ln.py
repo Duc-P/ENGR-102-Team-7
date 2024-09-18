@@ -32,31 +32,20 @@ while ask == True: #if x is outside of 0 < x <= 2, keep asking
         ask = False
 
 tol = float(input("Enter the tolerance: "))
-
 #Approximate ln(x) using taylor series expanison and a loop
-check = 99999
+check = 1
 approximate = x - 1 #do the first step of the expansion before looping
-step = 2 #since first step is done, the second term is used
-while check >= tol:
-    if step % 2 == 0:
-        #even term, so subtract
-        approximate -= ((x - 1) ** step)/step
-        step += 1
-        #make sure the term is stored to a value that can be checked if its less than the tolerance
-        check = ((x - 1) ** step)/step
-        #print(f"{step}:{check}") Debug purposes
-    else:
-        #odd term, so add
-        approximate += ((x - 1) ** step)/step
-        step += 1
-        #make sure the term is stored to a value that can be checked if its less than the tolerance
-        check = ((x - 1) ** step)/step
-        #print(f"{step}:{check}") Debug purposes
+n = 1
+total_sum = 0.0
+while abs(approximate) >= tol:
+    total_sum += approximate
+    n += 1
+    approximate = ((-1) ** (n-1)) * (((x-1) ** n) / n)
 
 #Get the exact ln of x
 exact = log(x)
 
 #print out the approximate, exact, and difference values
-print(f"ln({x}) is approximately {approximate}")
+print(f"ln({x}) is approximately {total_sum}")
 print(f"ln({x}) is exactly {exact}")
-print(f"The difference is {abs(exact - approximate)}")
+print(f"The difference is {abs(total_sum - exact)}")
