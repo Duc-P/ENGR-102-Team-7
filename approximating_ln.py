@@ -37,7 +37,7 @@ tol = float(input("Enter the tolerance: "))
 check = 99999
 approximate = x - 1 #do the first step of the expansion before looping
 step = 2 #since first step is done, the second term is used
-while check > tol:
+while check >= tol:
     if step % 2 == 0:
         #even term, so subtract
         approximate -= ((x - 1) ** step)/step
