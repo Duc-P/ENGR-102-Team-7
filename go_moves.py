@@ -7,6 +7,12 @@ board = [[".",".",".",".",".",".",".",".","."],
          [".",".",".",".",".",".",".",".","."], 
          [".",".",".",".",".",".",".",".","."], 
          [".",".",".",".",".",".",".",".","."]]
+
+turn = False # flip flop b/w True and False
+user_play = "start"
+
+while user_play != "stop":
+
 for i in board:
     for j in i:
         print(j,"",end="")
