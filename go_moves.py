@@ -9,9 +9,10 @@ board = [[".",".",".",".",".",".",".",".","."],
          [".",".",".",".",".",".",".",".","."]]
 
 turn = False # flip flop b/w True and False
-user_play = "start"
+user_row = 1 # first input 
+user_col = 1 # second input
 
-while user_play != "stop":
+while user_row != "stop" or user_col != "stop": 
          break
 
 for i in board:
