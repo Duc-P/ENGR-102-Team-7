@@ -276,6 +276,10 @@ while user_row != "stop" or user_col != "stop":
                 print(j,"",end="")
             print()
 """
+### WELCOME ###
+print("Welcome to Python Go!\n===<*>===")
+print("Take turn entering the row and column number of your tile placement")
+print("Top left: [1,1]\tBottom right: [9,9]")
 
 board = [[".",".",".",".",".",".",".",".","."],
          [".",".",".",".",".",".",".",".","."],
