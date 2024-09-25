@@ -94,7 +94,7 @@ while user_row != "stop" or user_col != "stop":
             print()
 """
 
-
+"""
 board = [[".",".",".",".",".",".",".",".","."],
          [".",".",".",".",".",".",".",".","."],
          [".",".",".",".",".",".",".",".","."], 
@@ -160,4 +160,52 @@ while user_row != "stop" or user_col != "stop":
             user_row = int(input('Player 1 Choose your desired row:'))
         board[user_row-1][user_column-1] =chr(9675)
         turn = False
+"""
 
+ board = [[".",".",".",".",".",".",".",".","."],
+         [".",".",".",".",".",".",".",".","."],
+         [".",".",".",".",".",".",".",".","."], 
+         [".",".",".",".",".",".",".",".","."], 
+         [".",".",".",".",".",".",".",".","."], 
+         [".",".",".",".",".",".",".",".","."], 
+         [".",".",".",".",".",".",".",".","."], 
+         [".",".",".",".",".",".",".",".","."], 
+         [".",".",".",".",".",".",".",".","."]]
+
+turn = False # flip flop b/w True and False
+user_row = 1 # first input 
+user_col = 1 # second input
+
+while user_row != "stop" or user_col != "stop": 
+    if turn == False:
+        user_column = input('Player 1 Choose your desired column:' )
+        user_row = input('Player 1 Choose your desired row:')
+        if user_column == 'stop' or user_row == 'stop':
+            break
+        board[int(user_row)-1][int(user_column)-1]
+        while board[int(user_row)-1][int(user_column)-1] == chr(9675) or board[int(user_row)-1][int(user_column)-1] == chr(9679):
+            print('This Space has already been played, choose a different place!')
+            user_column = input('Player 1 Choose your desired column:' )
+            user_row = input('Player 1 Choose your desired row:')
+        board[int(user_row)-1][int(user_column)-1] = chr(9679)
+        turn = True
+        for i in board:
+            for j in i:
+                print(j,"",end="")
+            print()
+    else:
+        user_column = input('Player 2 Choose your desired column:' )
+        user_row = input('Player 2 choose your desired row:')
+        if user_column == 'stop' or user_row == 'stop':
+            break
+        board[int(user_row)-1][int(user_column)-1]
+        while board[int(user_row)-1][int(user_column)-1] == chr(9675) or board[int(user_row)-1][int(user_column)-1] == chr(9679):
+            print('This Space has already been played, choose a different place!')
+            user_column = input('Player 1 Choose your desired column:' )
+            user_row = input('Player 1 Choose your desired row:')
+        board[int(user_row)-1][int(user_column)-1] =chr(9675)
+        turn = False
+        for i in board:
+            for j in i:
+                print(j,"",end="")
+            print()
