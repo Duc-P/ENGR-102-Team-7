@@ -48,7 +48,7 @@ while user_row != "stop" or user_column != "stop":
             user_row = input('Player 1 Choose your desired row:')
             if user_column == 'stop' or user_row == 'stop':
                 break
-#making sure that the input hasn't been used before
+#Making sure that the input hasn't been used before
         while board[int(user_row)-1][int(user_column)-1] == chr(9675) or board[int(user_row)-1][int(user_column)-1] == chr(9679):
             print('This Space has already been played, choose a different place!')
             user_column = input('Player 1 Choose your desired column:' )
@@ -60,12 +60,14 @@ while user_row != "stop" or user_column != "stop":
         if user_column == 'stop' or user_row == 'stop':
             break
         board[int(user_row)-1][int(user_column)-1] = chr(9679)
+#Switching turns
         turn = True
         for i in board:
             for j in i:
                 print(j,"",end="")
             print()
 # player 2 codes starts below
+#Player 2 code follows the same rules as Player One, it is just adapted to Player Two
     else:
         user_column = input('Player 2 Choose your desired column:' )
         if user_column == 'stop' or user_row == 'stop':
