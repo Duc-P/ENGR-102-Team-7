@@ -12,6 +12,7 @@ turn = False # flip flop b/w True and False
 user_play = "start"
 
 while user_play != "stop":
+         break
 
 for i in board:
     for j in i:
