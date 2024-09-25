@@ -86,10 +86,10 @@ while user_row != "stop" or user_column != "stop":
         board[int(user_row)-1][int(user_column)-1]
         while board[int(user_row)-1][int(user_column)-1] == chr(9675) or board[int(user_row)-1][int(user_column)-1] == chr(9679):
             print('This Space has already been played, choose a different place!')
-            user_column = input('Player 1 Choose your desired column:' )
+            user_column = input('Player 2 Choose your desired column:' )
             if user_column == 'stop' or user_row == 'stop':
                 break
-            user_row = input('Player 1 Choose your desired row:')
+            user_row = input('Player 2 Choose your desired row:')
             if user_column == 'stop' or user_row == 'stop':
                 break
         if user_column == 'stop' or user_row == 'stop':
