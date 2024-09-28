@@ -26,6 +26,11 @@ board = [[".",".",".",".",".",".",".",".","."],
          [".",".",".",".",".",".",".",".","."], 
          [".",".",".",".",".",".",".",".","."]]
 
+for i in board:
+    for j in i:
+        print(j,"",end="")
+    print()
+
 turn = False # flip flop b/w True and False
 user_row = 1 # first input 
 user_column = 1 # second input
