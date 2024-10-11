@@ -170,21 +170,21 @@ if fav_char != "":
         first_digit[i] = new_replace
     #Replace chars in second digit of time
     for i in range(5):
+        new_replace = ""
         for char in second_digit[i]:
             if char in replace:
                 new_replace += replace.get(char)
             else:
                 new_replace += " "
-        new_replace = ""
         second_digit[i] = new_replace
     #Replace chars in third digit of time
     for i in range(5):
+        new_replace = ""
         for char in third_digit[i]:
             if char in replace:
                 new_replace += replace.get(char)
             else:
                 new_replace += " "
-        new_replace = ""
         third_digit[i] = new_replace
     #If there are 4 digits of time, replace chars in fourth digit of time
     if len(time_split) == 4:
@@ -200,18 +200,18 @@ if fav_char != "":
 
 #If 4 digit time and 24 hr clock, output result
 if len(time_split) == 4 and clock_type == "24":
-    print(first_digit[0] + second_digit[0] + line1_colon + third_digit[0] + fourth_digit[0])
-    print(first_digit[1] + second_digit[1] + line2_colon + third_digit[1] + fourth_digit[1])
-    print(first_digit[2] + second_digit[2] + line3_colon + third_digit[2] + fourth_digit[2])
-    print(first_digit[3] + second_digit[3] + line4_colon + third_digit[3] + fourth_digit[3])
-    print(first_digit[4] + second_digit[4] + line5_colon + third_digit[4] + fourth_digit[4])
+    print(first_digit[0] + second_digit[0] + line1_colon + third_digit[0] + fourth_digit[0][:-1])
+    print(first_digit[1] + second_digit[1] + line2_colon + third_digit[1] + fourth_digit[1][:-1])
+    print(first_digit[2] + second_digit[2] + line3_colon + third_digit[2] + fourth_digit[2][:-1])
+    print(first_digit[3] + second_digit[3] + line4_colon + third_digit[3] + fourth_digit[3][:-1])
+    print(first_digit[4] + second_digit[4] + line5_colon + third_digit[4] + fourth_digit[4][:-1])
 #If 3 digit time and 24 hr clock, output result but only with 3 digits
 elif len(time_split) == 3 and clock_type == "24":
-    print(first_digit[0] + line1_colon + second_digit[0] + third_digit[0])
-    print(first_digit[1] + line2_colon + second_digit[1] + third_digit[1])
-    print(first_digit[2] + line3_colon + second_digit[2] + third_digit[2])
-    print(first_digit[3] + line4_colon + second_digit[3] + third_digit[3])
-    print(first_digit[4] + line5_colon + second_digit[4] + third_digit[4])
+    print(first_digit[0] + line1_colon + second_digit[0] + third_digit[0][:-1])
+    print(first_digit[1] + line2_colon + second_digit[1] + third_digit[1][:-1])
+    print(first_digit[2] + line3_colon + second_digit[2] + third_digit[2][:-1])
+    print(first_digit[3] + line4_colon + second_digit[3] + third_digit[3][:-1])
+    print(first_digit[4] + line5_colon + second_digit[4] + third_digit[4][:-1])
 #If 3 digit time, 12 hr clock, and is PM output result but only with 3 digits
 elif len(time_split) == 3 and ispm == True and clock_type == "12":
     print(first_digit[0] + line1_colon + second_digit[0] + third_digit[0] + pm[0])
