@@ -26,9 +26,11 @@ if time[0] == "0":
 if fav_char == "":
     allowed_chars = ""
     
+skip = 0
 #While the user enters chars that aren't allowed, ask again
 while fav_char not in allowed_chars:
     fav_char = input("Character not permitted! Try again: ")
+print("")
     
 #Use a dictionary to replace chars later on 
 replace = {"0": fav_char, "1": fav_char, "2":fav_char, "3": fav_char, "4": fav_char,"5": fav_char,"6": fav_char,"7": fav_char,"8": fav_char,"9": fav_char}
