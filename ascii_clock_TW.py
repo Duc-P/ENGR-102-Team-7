@@ -45,16 +45,14 @@ if clock_type == '12':
 ## 24 hours ##
 # Make board using matrices using the given time
 else:
-    if len(str(time_list)) == 2:
+    if int(time_list[0]) >= 10:
         board.append(mat_clock[int(time_list[0])//10])
         board.append(mat_clock[int(time_list[0])%10])
         board.append(mat_clock[':'])
         board.append(mat_clock[int(time_list[1])//10])
         board.append(mat_clock[int(time_list[1])%10])
-        board.append(mat_clock['am'])
     else:
-        board.append(mat_clock[time_list[0]])
+        board.append(mat_clock[int(time_list[0])])
         board.append(mat_clock[':'])
         board.append(mat_clock[int(time_list[1])//10])
         board.append(mat_clock[int(time_list[1])%10]) 
-        board.append(mat_clock['am'])
