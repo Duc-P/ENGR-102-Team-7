@@ -5,6 +5,12 @@ board = [[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," 
          [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], 
          [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "]]
 
+def char_convert(val,char,key):
+    for row_n in range(len(val)): # 0 to 4 inclusive
+        #print(val[row_n]) # should print 5 lists with 1 string each
+        val[row_n][0] = val[row_n][0].replace(key,char) # replaces key with char
+    return val
+
 ### formating ###
 #integers#
 #0
@@ -118,6 +124,11 @@ for r in mat_clock[":"]:
         print(c)
 '''
 
+x=2 # any number you want to convert
+char="*" # any single character you want use in place of number(s)
+
+mat_clock[x] = char_convert(mat_clock[x], char, str(x))
+
 # first: notice column value of 0
 for i in range(len(board)):
     board[i][0] = mat_clock[1][i][0]
@@ -126,7 +137,6 @@ for i in range(len(board)):
 for i in range(len(board)):
     board[i][3] = mat_clock[2][i][0]
     
-
 # third: notice column value of 4
 for i in range(len(board)):
     board[i][4] = mat_clock[" "][i][0]
@@ -156,11 +166,3 @@ for r in board:
     for c in r:
         print(c,end="")
     print()
-
-
-
-
-
-
-
-
