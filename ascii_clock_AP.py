@@ -27,8 +27,8 @@ minutes = time_list[1]
 
 #format
 clock_type = input("Choose the clock type (12 or 24): ")
-while clock_type not in ["12", "24"]:
-    clock_type = input("Time type not permitted! Try again: ")
+while fav_char not in allowed_chars or len(fav_char) != 1:
+    fav_char = input("Character not permitted! Try again: ")
 
 #character
 allowed_chars = "abcdeghkmnopqrsuvwxyz@$&*="
