@@ -175,20 +175,6 @@ if fav_char != "":
     for i in range(10): #0 to 9 inclusive
         mat_clock[i] = char_convert(mat_clock[i], fav_char, str(i))
 
-## 12 hour ##
-# By submitting this assignment, I agree to the following:
-# “Aggies do not lie, cheat, or steal, or tolerate those who do”
-# “I have not given or received any unauthorized aid on this assignment”
-#
-# Names:
-# Townsend Wheeler
-# Duc Pham
-# Julian Curry
-# Archelaus Paxon
-# Section: 518
-# Assignment: Lab Topic 8
-# Date: 13-10-2024
-
 # make if else statement deciding whether or not 12-hours or military clock is desired
 # if twelve hours clock is desired find if the hours are less than twelve
 
