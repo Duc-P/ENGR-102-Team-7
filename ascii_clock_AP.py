@@ -1,3 +1,13 @@
+# By submitting this assignment, I agree to the following:
+#   "Aggies do not lie, cheat, or steal, or tolerate those who do."
+#   "I have not given or received any unauthorized aid on this assignment."
+#
+# Name:         Archelaus Paxon
+# Section:      518
+# Assignment:   Module 8 team lab (individual component)
+# Date:         13-10-2024
+#
+
 ### input ###
 #time
 time = input("Enter the time: ")
@@ -23,15 +33,3 @@ while len(time_list[1]) != 2:
 #Store the hour and minutes separately
 hour = time_list[0]
 minutes = time_list[1]
-
-
-#format
-clock_type = input("Choose the clock type (12 or 24): ")
-while clock_type not in ["12", "24"]:
-    clock_type = input("Time type not permitted! Try again: ")
-
-#character
-allowed_chars = "abcdeghkmnopqrsuvwxyz@$&*="
-fav_char = input("Enter your preferred character: ")
-while fav_char not in allowed_chars or len(fav_char) != 1:
-    fav_char = input("Character not permitted! Try again: ")
