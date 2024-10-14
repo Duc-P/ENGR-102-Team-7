@@ -1,15 +1,21 @@
-#board
-board = [[" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],
-         [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],
-         [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], 
-         [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "], 
-         [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "]]
+# By submitting this assignment, I agree to the following:
+#   "Aggies do not lie, cheat, or steal, or tolerate those who do."
+#   "I have not given or received any unauthorized aid on this assignment."
+#
+# Name:         DUC PHAM
+# Section:      518
+# Assignment:   Module 8 team lab (individual component)
+# Date:         13-10-2024
+#
 
 def char_convert(val,char,key):
     for row_n in range(len(val)): # 0 to 4 inclusive
         #print(val[row_n]) # should print 5 lists with 1 string each
         val[row_n][0] = val[row_n][0].replace(key,char) # replaces key with char
     return val
+
+#Townsend's board
+board = []
 
 ### formating ###
 #integers#
@@ -118,51 +124,3 @@ mat_clock = {0:zero,
              "pm":pm,
              ":":colon,
              " ":space}
-'''
-for r in mat_clock[":"]:
-    for c in r:
-        print(c)
-'''
-
-x=2 # any number you want to convert
-char="*" # any single character you want use in place of number(s)
-
-mat_clock[x] = char_convert(mat_clock[x], char, str(x))
-
-# first: notice column value of 0
-for i in range(len(board)):
-    board[i][0] = mat_clock[1][i][0]
-
-# second: notice column value of 3
-for i in range(len(board)):
-    board[i][3] = mat_clock[2][i][0]
-    
-# third: notice column value of 4
-for i in range(len(board)):
-    board[i][4] = mat_clock[" "][i][0]
-
-# fourth: notice column value of 5
-for i in range(len(board)):
-    board[i][5] = mat_clock[":"][i][0]
-    
-# fifth: notice column value of 6
-for i in range(len(board)):
-    board[i][6] = mat_clock[" "][i][0]
-
-# sixth: notice column value of 8
-for i in range(len(board)):
-    board[i][8] = mat_clock[3][i][0]
-
-# seventh: notice column value of 11
-for i in range(len(board)):
-    board[i][11] = mat_clock[0][i][0]
-
-# eighth: notice column value of 12
-for i in range(len(board)):
-    board[i][14] = mat_clock["pm"][i][0]
-
-### board display ###
-for r in board:
-    for c in r:
-        print(c,end="")
-    print()
