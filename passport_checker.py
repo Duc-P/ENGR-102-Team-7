@@ -11,6 +11,40 @@
 # Assignment: Lab 11.9: Passport Checker
 # Date: 30-10-2024
 
+def check_cid(passport_list):
+    return None
+
+def check_pid(passport_list):
+    return None
+
+def check_ecl(passport_list):
+    return None
+
+def check_hcl(passport_list):
+    return None
+
+def check_hgt(passport_list):
+    return None
+
+def check_eyr(passport_list):
+    return None
+
+def check_iyr(passport_list):
+    return None
+
+def check_byr(passport_list):# take in a single list of all passports
+    valid_passport = [] # only valid bday -> pass to next function
+    for element in passport_list:
+        #print("THIS ELEMENT IS:\n"+element+"\n")
+        bool_byr = element[:4] == "byr:"
+        if bool_byr: 
+            print("THIS ELEMENT IS:\n"+element+"\n")
+            temp_byr = int(element[4:8])
+            if 1920 <= temp_byr <= 2008:
+                #print("hello")
+                valid_passport.append(element)
+    return None
+
 #take in user input
 user_query = input("Enter the name of the file: ")
 ORIGINAL_PASS = open(user_query, "r+")
