@@ -12,13 +12,26 @@
 # Date: 2-11-2024
 
 def check_cid(passport):
-    return None
+    return False
 
 def check_pid(passport):
-    return None
+    pid_bool = False
+    if 'pid' in passport:
+        pid_value = str(passport[passport.index('pid')+4:passport.index('pid')+13]) # generate string of interest
+        if pid_value[-1] == " " or pid_value[-1] == "\n" or pid_value[-1] == "\t":   
+            return False # when detect a space, newline, or tab
+        else:
+            pid_bool = True
+    return pid_bool
 
 def check_ecl(passport):
-    return None
+    valid_ecl = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
+    
+    if 'ecl' in passport:
+        ecl_value = str(passport[passport.index('ecl')+4:passport.index('ecl')+7])
+        if ecl_value in valid_ecl:
+            return True
+    return False
 
 def check_hcl(passport):
     valid_char = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
@@ -67,11 +80,11 @@ for i in pass_list:
     if check_byr(i):
         if check_eyr(i):
             if check_hgt(i):
-                if 'hcl' in i:
-                    if 'ecl' in i:
-                        if 'pid' in i:
+                if check_hcl(i):
+                    if check_ecl(i):
+                        if check_pid(i):
                             if 'cid' in i:
                                 valid_passports += 1
-                                with open('valid_passports.txt', 'a+') as new_file:
+                                with open('valid_passports2.txt', 'a+') as new_file:
                                     new_file.write(i + '\n\n')
 print('There are', valid_passports, 'valid passports')
