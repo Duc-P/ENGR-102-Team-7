@@ -11,36 +11,6 @@
 # Assignment: Lab 11.9: Passport Checker
 # Date: 30-10-2024
 
-def check_cid(passport):
-    return None
-
-def check_pid(passport):
-    return None
-
-def check_ecl(passport):
-    return None
-
-def check_hcl(passport):
-    return None
-
-def check_hgt(passport):
-    return None
-
-def check_eyr(passport):
-    if 'eyr' in passport and (2024 <= int(passport[passport.index('eyr')+2:passport.index('eyr')+6]) <= 2034):
-        return True
-    return False
-
-'''
-def check_iyr(passport_list):
-    return None
-'''
-
-def check_byr(passport):# take in one passport    
-    if 'byr' in passport and (1920 <= int(passport[passport.index('byr')+2:passport.index('byr')+6]) <= 2008):
-        return True
-    return False
-
 #take in user input
 user_query = input("Enter the name of the file: ")
 ORIGINAL_PASS = open(user_query, "r+")
