@@ -21,7 +21,21 @@ def check_ecl(passport):
     return None
 
 def check_hcl(passport):
-    return None
+    valid_char = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+    hcl_bool = False
+    
+    if 'hcl' in passport:
+        hcl_value = str(passport[passport.index('hcl')+4:passport.index('hcl')+11]) # IDEALLY til the next index of a ' ' or \n
+        #print("hair color code: ",hcl_value) # the string of interest for further analysis
+        if hcl_value[0] == "#":
+            #print("pass the # test")
+            for i in range(1,7):
+                if not(hcl_value[i] in valid_char):
+                    #print("the value that failed: ",hcl_value[i])
+                    return False #return false at first detection of false input
+                else:
+                    hcl_bool = True
+    return hcl_bool
 
 def check_hgt(passport):
     if 'hgt' in passport:
@@ -35,11 +49,6 @@ def check_eyr(passport):
     if 'eyr' in passport and (2024 <= int(passport[passport.index('eyr')+4:passport.index('eyr')+8]) <= 2034):
         return True # parsing the 4 digits after the ":" in eyr and converting it to an int for comparison
     return False
-
-'''
-def check_iyr(passport_list):
-    return None
-'''
 
 def check_byr(passport):# take in one passport 
     if 'byr' in passport and (1920 <= int(passport[(passport.index('byr')+4):(passport.index('byr')+8)]) <= 2008):
