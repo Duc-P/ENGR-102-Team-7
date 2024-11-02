@@ -12,6 +12,11 @@
 # Date: 2-11-2024
 
 def check_cid(passport):
+    if 'cid' in passport:
+        cid_value = int(passport[passport.index('cid')+4:passport.index('cid')+7])
+        #print(cid_value)
+        if 99 < cid_value < 1000:
+            return True
     return False
 
 def check_pid(passport):
@@ -83,7 +88,7 @@ for i in pass_list:
                 if check_hcl(i):
                     if check_ecl(i):
                         if check_pid(i):
-                            if 'cid' in i:
+                            if check_cid(i):
                                 valid_passports += 1
                                 with open('valid_passports2.txt', 'a+') as new_file:
                                     new_file.write(i + '\n\n')
