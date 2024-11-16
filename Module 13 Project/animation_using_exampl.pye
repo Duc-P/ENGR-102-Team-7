@@ -1,7 +1,7 @@
 import pygame, sys
 from button import Button
 
-from rtl_animation import rtl_animation
+from animation_rtl import animation_rtl
 pygame.init()
 
 SCREEN = pygame.display.set_mode((1280, 720)) #This is the screen size! 1280 by 720
