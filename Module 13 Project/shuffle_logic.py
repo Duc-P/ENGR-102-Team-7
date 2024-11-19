@@ -486,6 +486,7 @@ def place_marble(pm_i_m_index,pm_s_total):
             rtm_cw(arrangement, pm_s_total)
         elif shuffle_int == 12:
             rtm_cc(arrangement, pm_s_total)
+    return arrangement
 
 
 def guess_marble(arr):
