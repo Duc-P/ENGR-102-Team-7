@@ -1,16 +1,14 @@
 import os
 import time
+import sys
 
 t_sleep = 0.25
+score = 0
 
 def ready_shuffle():
     user_input = input("shuffle? [input <enter> to begin]")
     os.system('clear')
     # call respective starting animation
-
-def guess_marble():
-    print("     \n ooo \n     ") # reset position
-    user_guess = input("what is your guess?")
 
 ######################
 ### animation left ###
@@ -560,30 +558,103 @@ def place_marble(pm_i_m_index,pm_s_total):
         elif shuffle_int == 12:
             rtm_cc(arrangement, pm_s_total)
 
+def play():
+    os.system('clear') # clean up screen
+    difficulty = 1 # use to scale various dynamics of the game
+
+    # get the index of the box the player choose
+    # enable mouse input # saved as user text input for now [0,1,2]
+
+    arrangement = [None, None, None] # set up of the three shells
+    initial_m_index = random.randint(0, 2) #input("pick the box you want to place the marble in: ")
+    shuffle_total   = random.randint(1, difficulty*6+1) # random total of time we are shuffling
+
+    print("inital marble placement",initial_m_index)
+    #print("total # shuffle",shuffle_total)
+
+    place_marble(initial_m_index, shuffle_total)
+
+def view_score():
+    print(f"your score is {score}")
+    while True:
+        user_input = input("Would you like to play again [y/n]?")
+        if user_input == "y":
+            play()
+            break
+        elif user_input == "n":
+            menu()
+            break
+        else:
+            print("Invalid input. Enter again")
+            user_input = input("Would you like to play again [y/n]?")
+
+def play_again():
+    while True:
+        user_input = input("Would you like to play again [y/n]?")
+        if user_input == "y":
+            play()
+            break
+        elif user_input == "n":
+            user_input = input("Would you like see your score [y/n]?")
+            while True:
+                if user_input == "y":
+                    view_score()
+                    break
+                elif user_input == "n":
+                    menu()
+                    break
+            break
+        else:
+            print("Invalid input. Enter again")
+            user_input = input("Would you like to play again [y/n]?")
+
 def guess_marble(arr):
+    print("     \n ooo \n     ") # reset position
     #print(arr) # temporarily cheat in our game to confirm results
     user_guess = input("Your guess [0,1,2] --> ")
     if arr[int(user_guess)] == True:
         print("congrats!")
+        play_again()
     else:
         print("bruh")
     # if not a valid input, loop try again
 
     return None
 
+def manual():
+    pass
 
-### variable presets ###
-os.system('clear') # clean up screen
-difficulty = 1 # use to scale various dynamics of the game
+def menu():
+    os.system('clear') # clean up screen
+    acceptable_input = {"1":"playing game!","2":"loading manual...","3":"until next time"} # dictionary use case!
+    game_banner = "---<<< S H E L L  S H O C K >>>---"
+    game_directories = [("1 - PLAY").center(len(game_banner)),
+                        ("2 - MANUAL").center(len(game_banner)),
+                        ("3 - QUIT").center(len(game_banner))]
 
-# get the index of the box the player choose
-# enable mouse input # saved as user text input for now [0,1,2]
+    print(game_banner+"\n")
+    for i in game_directories:
+        print(i)
+    print()
+    user_directory = input("Where would you like to go? ")
 
-arrangement = [None, None, None] # set up of the three shells
-initial_m_index = random.randint(0, 2) #input("pick the box you want to place the marble in: ")
-shuffle_total   = random.randint(1, difficulty*6+1) # random total of time we are shuffling
+    # try-except use case
+    while True:
+        try:
+            print(acceptable_input[user_directory])
+            break
+        except KeyError:
+            print(f"\"{user_directory}\" is not a valid directory. Please enter a valid directory")
+            user_directory = input("Where would you like to go? ")
 
-print("inital marble placement",initial_m_index)
-#print("total # shuffle",shuffle_total)
+    # use case of if-elif chain"
+    if user_directory ==  "1":
+        play()
+    elif user_directory == "2":
+        manual()
+    elif user_directory == "3":
+        print("good bye")
+        time.sleep(1)
+        sys.exit()
 
-place_marble(initial_m_index, shuffle_total)
+menu()
