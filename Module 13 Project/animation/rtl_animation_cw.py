@@ -44,7 +44,13 @@ class rtl_left_cup:
         return self.y, self.x
     def return_values(self):
         return self.x, self.y, self.x_i, self.y_i
-the_rtl_left_cup = rtl_left_cup((SCREEN.get_width()/3)-(cup_x/2), (SCREEN.get_height()/2)-(cup_y/2), 20, SCREEN.get_width()/3 - (cup_x/2), SCREEN.get_height()/2-(cup_y/2) , cup_small)
+    def reset(self):
+        self.x = self.x_i
+        self.y = self.y_i
+        self.rtl_left_move1 = True
+        self.rtl_left_move2 = False
+        self.rtl_left_move3 = False
+the_rtl_left_cup = rtl_left_cup((SCREEN.get_width()/3)-(cup_x/2), (SCREEN.get_height()/2)-(cup_y/2), 40, SCREEN.get_width()/3 - (cup_x/2), SCREEN.get_height()/2-(cup_y/2) , cup_small)
 
 #MIDDLE CUP
 
@@ -82,7 +88,7 @@ class rtl_mid_cup:
             self.x = self.x_i'''
     def return_values(self):
         return self.x, self.y, self.x_i, self.y_i
-the_rtl_mid_cup = rtl_mid_cup(SCREEN.get_width()/2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), 20, SCREEN.get_width()/2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), cup_small)
+the_rtl_mid_cup = rtl_mid_cup(SCREEN.get_width()/2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), 37, SCREEN.get_width()/2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), cup_small)
 
                 
 #RIGHT CUP
@@ -122,9 +128,17 @@ class rtl_right_cup:
         return self.y, self.x
     def return_values(self):
         return self.x, self.y, self.x_i, self.y_i
+    def reset(self):
+        self.x = self.x_i
+        self.y = self.y_i
+        self.rtl_right_move1 = True
+        self.rtl_right_move2 = False
+        self.rtl_right_move3 = False
 
-the_rtl_right_cup = rtl_right_cup((SCREEN.get_width()/3)*2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), 20, (SCREEN.get_width()/3)*2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), cup_small)
-
+the_rtl_right_cup = rtl_right_cup((SCREEN.get_width()/3)*2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), 37, (SCREEN.get_width()/3)*2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), cup_small)
+def rtl_animation_cw_reset():
+    the_rtl_left_cup.reset()
+    the_rtl_right_cup.reset()
 def rtl_animation_cw():
     '''Takes in no input as a parameter. Updates PNGs during animation, and then subsequently prints them. Oncee the animation is done, it will stop printing the PNGs.
     This animation switches the right and the left cup in a clockwise motion.'''

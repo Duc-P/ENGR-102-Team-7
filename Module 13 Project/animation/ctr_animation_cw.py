@@ -43,6 +43,12 @@ class ctr_right_cup:
             self.x = self.x_i
     def return_values(self):
         return self.x, self.y, self.x_i, self.y_i
+    def reset(self):
+        self.x = self.x_i
+        self.y = self.y_i
+        self.ctr_mid_move1 = True
+        self.ctr_mid_move2 = False
+        self.ctr_mid_move3 = False
 the_ctr_right_cup = ctr_right_cup((SCREEN.get_width()/3)*2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), 20, (SCREEN.get_width()/3)*2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), cup_small)
 
 #Left Cup
@@ -116,11 +122,18 @@ class ctr_mid_cup:
             self.x = self.x_i
     def return_values(self):
         return self.x, self.y, self.x_i, self.y_i
+    def reset(self):
+        self.x = self.x_i
+        self.y = self.y_i
+        self.ctr_right_move1 = True
+        self.ctr_right_move2 = False
+        self.ctr_right_move3 = False
 the_ctr_mid_cup = ctr_mid_cup(SCREEN.get_width()/2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), 20, SCREEN.get_width()/2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), cup_small)
                 
 
-
-
+def ctr_animation_cw_reset():
+    the_ctr_right_cup.reset()
+    the_ctr_mid_cup.reset()
 def ctr_animation_cw():
     '''Takes in no input as a parameter. Updates PNGs during animation, and then subsequently prints them. Oncee the animation is done, it will stop printing the PNGs.
     This animation switches the right and the center cup in a clockwise motion.'''

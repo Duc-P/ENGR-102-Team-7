@@ -41,6 +41,12 @@ class ctl_left_cup:
             self.x = self.x_i
     def return_values(self):
         return self.x, self.y, self.x_i, self.y_i
+    def reset(self):
+        self.x = self.x_i
+        self.y = self.y_i
+        self.ctl_left_move1 = True
+        self.ctl_left_move2 = False
+        self.ctl_left_move3 = False
 the_ctl_left_cup = ctl_left_cup(SCREEN.get_width()/3-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), 20, SCREEN.get_width()/3-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), cup_small)
 
 #MIDDLE CUP
@@ -79,6 +85,12 @@ class ctl_mid_cup:
             self.x = self.x_i
     def return_values(self):
         return self.x, self.y, self.x_i, self.y_i
+    def reset(self):
+        self.x = self.x_i
+        self.y = self.y_i
+        self.ctl_mid_move1 = True
+        self.ctl_mid_move2 = False
+        self.ctl_mid_move3 = False
 the_ctl_mid_cup = ctl_mid_cup(SCREEN.get_width()/2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), 20, SCREEN.get_width()/2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), cup_small)
                 
 #RIGHT CUP
@@ -115,11 +127,12 @@ class ctl_right_cup:
         else:
             self.y = self.y_i
             self.x = self.x_i'''
-def return_values(self):
-    return self.x, self.y, self.x_i, self.y_i
+
 
 the_ctl_right_cup = ctl_right_cup((SCREEN.get_width()/3)*2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), 20, (SCREEN.get_width()/3)*2-(cup_x/2), SCREEN.get_height()/2-(cup_y/2), cup_small)
-
+def ctl_animation_ccw_reset():
+    the_ctl_left_cup.reset()
+    the_ctl_mid_cup.reset()
 def ctl_animation_ccw():
     '''Takes in no input as a parameter. Updates PNGs during animation, and then subsequently prints them. Oncee the animation is done, it will stop printing the PNGs.
     This animation switches the center and the left cup in a counterclockwise motion.'''
